@@ -2,8 +2,6 @@
 
 Aplicação utilizando a API [OpenWeatherMap](https://openweathermap.org/).
 
-- [Exemplo da aplicação ](https://marcospss.github.io/ngrx-weather-forecast)
-
 ## Pacotes utilizados do [@ngrx](https://github.com/ngrx/platform)
 
 - [@ngrx/store](https://github.com/ngrx/platform/docs/store/README.md)
