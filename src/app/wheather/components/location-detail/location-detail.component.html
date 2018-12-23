@@ -1,0 +1,24 @@
+<div class="location-detail" *ngIf="forecast">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/current-wheater']">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ forecast.city.name }}, {{ forecast.city.country }}</li>
+        </ol>
+    </nav>
+    <h1>{{ forecast.city.name }}, {{ forecast.city.country }}</h1>
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let day of forecast.list">
+                <th scope="row">
+                    {{ (day.dt * 1000) | date:'EEEE, MMM d'}}
+                </th>
+                <td>
+                    <p>
+                        <span class="badge badge-secondary">Max: {{ day.temp.max}}</span> | <span class="badge badge-secondary">Min: {{ day.temp.min }}</span>
+                    </p>
+                    <p><b>Clima:</b> {{ day.weather[0].description }}</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

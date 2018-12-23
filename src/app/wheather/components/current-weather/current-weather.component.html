@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="alert alert-danger col-md-12 p-2 text-center" *ngIf="!locations?.length" role="alert">
+        Nenhuma Localização foi encontrada
+    </div>
+    <div class="col-md-6" *ngFor="let location of locations">
+        <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+                <h4 class="d-inline-block mb-2 text-primary">
+                    <a [routerLink]="['/current-wheater', location.id]">{{ location.name }}, {{ location.sys.country }}</a>
+                </h4>
+                <h5 class="mb-1"><b class="text-muted">Condições atuais:</b> {{ location.weather[0].main }}</h5>
+                <h6>Temperaturas hoje:</h6>
+                <p class="card-text mb-auto">
+                    <b class="text-muted">Atual:</b> {{ location.main.temp | number:'.0-0' }} |
+                    <b class="text-muted">Max:</b> {{ location.main.temp_max | number:'.0-0' }} |
+                    <b class="text-muted">Min:</b> {{ location.main.temp_min | number:'.0-0' }}
+                </p>
+                <p class="d-inline-block mb-2 text-primary"><a [routerLink]="['/current-wheater', location.id]">Previsão para
+            os outros dias</a></p>
+            </div>
+            <!-- <button type="button" class="btn btn-light position-absolute pos-top" (click)="addLocation.emit('ADD Localização ID')">&#x0002B;</button> -->
+            <!-- <button type="button" class="btn btn-light position-absolute pos-top" (click)="removeLocation.emit('REMOVE Localização ID')">&times;</button> -->
+            <a [routerLink]="['/current-wheater', location.id]">
+                <img class="card-img-right flex-auto d-none d-lg-block" src="assets/images/icons/{{ location.weather[0].icon }}.png" alt="{{ location.name }}, {{ location.sys.country }}">
+            </a>
+        </div>
+    </div>
+</div>

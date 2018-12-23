@@ -1,0 +1,11 @@
+<div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm">
+
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="location" class="sr-only">Localização</label>
+            <input class="form-control" #location type="text" placeholder="Digite a localização" id="location" name="location" aria-label="Search">
+        </div>
+        <button class="btn btn-dark my-2 my-sm-0" type="button" (click)="searchLocation.emit(location.value)">Pesquisar</button>
+    </form>
+
+</div>

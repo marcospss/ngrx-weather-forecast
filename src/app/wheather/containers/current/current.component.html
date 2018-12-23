@@ -1,0 +1,2 @@
+<mps-location-search (searchLocation)="searchLocation($event)"></mps-location-search>
+<mps-current-weather [locations]="locations$ | async" (addLocation)="addLocation($event)" (removeLocation)="removeLocation($event)"></mps-current-weather>
